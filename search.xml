@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>test3</title>
+      <link href="/2023/05/19/test3/"/>
+      <url>/2023/05/19/test3/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> java-note </category>
+          
+          <category> base </category>
+          
+          <category> kafka </category>
+          
+          <category> vue-note </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> kafka </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>test2</title>
+      <link href="/2023/05/19/test2/"/>
+      <url>/2023/05/19/test2/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> java-note </category>
+          
+          <category> base </category>
+          
+          <category> database </category>
+          
+          <category> vue-note </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>test</title>
+      <link href="/2023/05/19/test/"/>
+      <url>/2023/05/19/test/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> java-note </category>
+          
+          <category> base </category>
+          
+          <category> database </category>
+          
+          <category> vue-note </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
