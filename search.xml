@@ -4,22 +4,18 @@
   
     
     <entry>
-      <title>test3</title>
-      <link href="/2023/05/19/test3/"/>
-      <url>/2023/05/19/test3/</url>
+      <title>java几种引用类型</title>
+      <link href="/2023/05/22/java_reference/"/>
+      <url>/2023/05/22/java_reference/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="一-强引用"><a href="#一-强引用" class="headerlink" title="一. 强引用"></a>一. 强引用</h1><p><strong>用途：</strong> 程序中普遍存在的对象<br><strong>回收时机：</strong> 只要强引用还在，垃圾手机器永远不会回收掉被引用的对象。<br><strong>实现：</strong> </p><h1 id="二-软引用"><a href="#二-软引用" class="headerlink" title="二. 软引用"></a>二. 软引用</h1><p><strong>用途：</strong> 有用但非必须的对象<br><strong>回收时机：</strong><br><strong>实现：</strong> 使用SoftReference类实现</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="三-弱引用"><a href="#三-弱引用" class="headerlink" title="三. 弱引用"></a>三. 弱引用</h1><p><strong>用途：</strong> 非必须的对象<br><strong>回收时机：</strong><br><strong>实现：</strong> 使用WeakReference类实现</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="四-虚引用"><a href="#四-虚引用" class="headerlink" title="四. 虚引用"></a>四. 虚引用</h1><p><strong>用途：</strong><br><strong>回收时机：</strong><br><strong>实现：</strong> 使用PhantomReference类实现</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="扩展1：FinalReference"><a href="#扩展1：FinalReference" class="headerlink" title="扩展1：FinalReference"></a>扩展1：FinalReference</h4><h4 id="扩展2：RefrenceQueue"><a href="#扩展2：RefrenceQueue" class="headerlink" title="扩展2：RefrenceQueue"></a>扩展2：RefrenceQueue</h4>]]></content>
       
       
       <categories>
           
-          <category> java-note </category>
+          <category> 后端 </category>
           
-          <category> base </category>
-          
-          <category> kafka </category>
-          
-          <category> vue-note </category>
+          <category> java </category>
           
       </categories>
       
@@ -27,8 +23,6 @@
         <tags>
             
             <tag> java </tag>
-            
-            <tag> kafka </tag>
             
         </tags>
       
@@ -37,22 +31,20 @@
     
     
     <entry>
-      <title>test2</title>
-      <link href="/2023/05/19/test2/"/>
-      <url>/2023/05/19/test2/</url>
+      <title>jvm对象判活的几种方式</title>
+      <link href="/2023/05/22/jvm_object_judgment/"/>
+      <url>/2023/05/22/jvm_object_judgment/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="一-引用计数法"><a href="#一-引用计数法" class="headerlink" title="一. 引用计数法"></a>一. 引用计数法</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>在对象中添加一个引用计数器，每当有一个地方引用改对象时，计数器+1；当引用失效时，计数器-1。任何时刻计数器为0的对象就是不可能再被使用的。</p><h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><p>缺点：对象之间如果存在循环引用，会导致引用计数永远都不为0，不会被垃圾回收。</p><p>优点：实现简单，判断效率高</p><h1 id="二-可达性分析法（引用链法）"><a href="#二-可达性分析法（引用链法）" class="headerlink" title="二. 可达性分析法（引用链法）"></a>二. 可达性分析法（引用链法）</h1><h2 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h2><p>通过一系列称为“GC Roots”的对象作为起点，从这些节点开始向下搜索，搜索所走过的路径称为引用链，当一个对象到GC Roots没有任何引用链相连时，则证明对象是不可用的。</p><h2 id="优缺点-1"><a href="#优缺点-1" class="headerlink" title="优缺点"></a>优缺点</h2><p>优点：解决了对象之间循环引用的问题。</p><h2 id="可以作为GC-Roots的对象"><a href="#可以作为GC-Roots的对象" class="headerlink" title="可以作为GC Roots的对象"></a>可以作为GC Roots的对象</h2><ul><li>虚拟机栈(栈帧中的本地变量表)中引用的对象—-&gt;局部变量</li><li>方法区中类的静态属性引用的对象—-&gt;类静态变量</li><li>方法区中常量引用的对象—-&gt;常量</li><li>本地方法栈中JNI引用的对象—-&gt;native方法</li></ul>]]></content>
       
       
       <categories>
           
-          <category> java-note </category>
+          <category> 后端 </category>
           
-          <category> base </category>
+          <category> java </category>
           
-          <category> database </category>
-          
-          <category> vue-note </category>
+          <category> jvm </category>
           
       </categories>
       
@@ -61,7 +53,7 @@
             
             <tag> java </tag>
             
-            <tag> mysql </tag>
+            <tag> jvm </tag>
             
         </tags>
       
@@ -70,22 +62,20 @@
     
     
     <entry>
-      <title>test</title>
-      <link href="/2023/05/19/test/"/>
-      <url>/2023/05/19/test/</url>
+      <title>jvm垃圾回收算法</title>
+      <link href="/2023/05/22/jvm_garbage_collection_algorithm/"/>
+      <url>/2023/05/22/jvm_garbage_collection_algorithm/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h4 id="垃圾收集算法"><a href="#垃圾收集算法" class="headerlink" title="垃圾收集算法"></a>垃圾收集算法</h4><ol><li><p>标记-清除算法<br>原理：首先标记出所有要回收的对象，在标记完成后统一回收所有被标记的对象。<br>优点：最基础的垃圾收集算法<br>缺点：<br> 1.效率问题：标记和清除两个过程的效率都不高。（<strong>原因是什么？</strong>）<br> 2.空间问题：标记清除会产生大量的不连续的内存碎片。当有大对象时，无法找到足够的连续内存存放， 进而触发一次垃圾收集操作。</p></li><li><p>复制算法<br>原理：将内存分成相等大小的2块，每次只使用其中的1块。当这1块内存使用完后，就将活着的对象复制到另1块内存上，然后把已使用过的内存空间一次清理掉。<br>优点：没有空间碎片，实现简单，运行高效。<br>缺点：可用内存变成了原来的一半，空间浪费。</p></li><li><p>标记-整理(标记-压缩)算法<br>原理：首先标记出所有要回收的对象，在标记完成后，首先将所有存活的对象都向一端移动，然后再清理掉端边界以外的内存。<br>优点：不会出现大量的不连续的内存碎片<br>缺点：<br> 1.效率问题：不仅需要标记的过程，再整理过程中，还需要整理存活对象的引用。（对象地址的移动）</p></li><li><p>分代收集算法<br>新生代采用”复制算法”；老年代采用”标记-清理算法”、”标记-整理算法”。</p></li></ol><hr><h4 id="新生代垃圾回收算法"><a href="#新生代垃圾回收算法" class="headerlink" title="新生代垃圾回收算法"></a>新生代垃圾回收算法</h4><h5 id="1-触发Minor-GC-的条件："><a href="#1-触发Minor-GC-的条件：" class="headerlink" title="1. 触发Minor GC 的条件："></a>1. 触发Minor GC 的条件：</h5><ol><li></li></ol><h5 id="2-适用的垃圾回收算法："><a href="#2-适用的垃圾回收算法：" class="headerlink" title="2. 适用的垃圾回收算法："></a>2. 适用的垃圾回收算法：</h5><p>复制算法。</p><hr><h4 id="老年代垃圾回收算法"><a href="#老年代垃圾回收算法" class="headerlink" title="老年代垃圾回收算法"></a>老年代垃圾回收算法</h4><h5 id="1-触发Full-GC-的条件："><a href="#1-触发Full-GC-的条件：" class="headerlink" title="1. 触发Full GC 的条件："></a>1. 触发Full GC 的条件：</h5><ol><li>Minor GC前，如果老年代的可用空间小于新生代全部对象的大小：<ol><li>如果没有开启了空间分配担保，则直接进行Full GC。</li><li>如果开启空间分配担保，</li></ol></li><li>Minor GC后</li><li></li></ol><h5 id="2-适用的垃圾回收算法：-1"><a href="#2-适用的垃圾回收算法：-1" class="headerlink" title="2. 适用的垃圾回收算法："></a>2. 适用的垃圾回收算法：</h5><ol><li>标记-清除算法。</li><li>标记-整理算法。</li></ol>]]></content>
       
       
       <categories>
           
-          <category> java-note </category>
+          <category> 后端 </category>
           
-          <category> base </category>
+          <category> java </category>
           
-          <category> database </category>
-          
-          <category> vue-note </category>
+          <category> jvm </category>
           
       </categories>
       
@@ -94,7 +84,38 @@
             
             <tag> java </tag>
             
-            <tag> redis </tag>
+            <tag> jvm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>jvm垃圾收集器</title>
+      <link href="/2023/05/22/jvm_garbage_collector/"/>
+      <url>/2023/05/22/jvm_garbage_collector/</url>
+      
+        <content type="html"><![CDATA[<h1 id="jvm垃圾收集器"><a href="#jvm垃圾收集器" class="headerlink" title="jvm垃圾收集器"></a>jvm垃圾收集器</h1><h4 id="Stop-the-world"><a href="#Stop-the-world" class="headerlink" title="Stop the world"></a>Stop the world</h4><p>stop the world：jvm会停止工作线程，只开启垃圾回收线程工作。<br>目的是在进行垃圾回收时，java工作线程不会创建新对象，新生代不会接收到新的对象。</p><p>PS：</p><ol><li>stop the world会造成系统停顿，因为会停止工作线程。</li><li>不同的垃圾收集器 stop the world的影响不同。</li></ol><hr><h4 id="jvm垃圾收集器-1"><a href="#jvm垃圾收集器-1" class="headerlink" title="jvm垃圾收集器"></a>jvm垃圾收集器</h4><h5 id="1-serial垃圾收集器"><a href="#1-serial垃圾收集器" class="headerlink" title="1. serial垃圾收集器"></a>1. serial垃圾收集器</h5><h5 id="2-parNew垃圾收集器"><a href="#2-parNew垃圾收集器" class="headerlink" title="2. parNew垃圾收集器"></a>2. parNew垃圾收集器</h5><h5 id="3-CMS垃圾收集器"><a href="#3-CMS垃圾收集器" class="headerlink" title="3. CMS垃圾收集器"></a>3. CMS垃圾收集器</h5><ol><li>初始标记：只标记</li><li>并发标记</li><li>重新标记</li><li>并发清理</li></ol><p>存在的问题：</p><ol><li>并发垃圾回收，会存在占用CPU资源的问题。</li></ol><h5 id="4-G1垃圾收集器"><a href="#4-G1垃圾收集器" class="headerlink" title="4. G1垃圾收集器"></a>4. G1垃圾收集器</h5>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+          <category> java </category>
+          
+          <category> jvm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> jvm </tag>
             
         </tags>
       
